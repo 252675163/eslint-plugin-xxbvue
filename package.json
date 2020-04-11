@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-xxbvue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "custom eslint rules for vue project ",
   "keywords": [
     "eslint",
