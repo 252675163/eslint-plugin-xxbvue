@@ -13,7 +13,7 @@ var ruleTester = new RuleTester({
   },
 });
 // 运行测试用例
-ruleTester.run("settimeout-no-number", rule, {
+ruleTester.run("antdvue-name-in-template-casing", rule, {
   // 正确的测试用例
   valid: [
     {
@@ -33,7 +33,7 @@ ruleTester.run("settimeout-no-number", rule, {
       errors: [
         {
           message:
-            "Component name \"a-Button\" must be {{caseType}}, because it's Ant-design-vue's", // 与rule抛出的错误保持一致
+            'Ant-design-vue\'s component name "a-Button" must be kebab-case.', // 与rule抛出的错误保持一致
         },
       ],
     },
