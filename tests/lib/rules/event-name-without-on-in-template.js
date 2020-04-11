@@ -43,9 +43,9 @@ ruleTester.run("event-name-without-on-in-template", rule, {
       errors: [
         {
           message: 'Component event name onClick must be not start with "on".', // 与rule抛出的错误保持一致
-          output: `<template><div><a-button @click='fn'>click me</a-button><c-button @click='fn'>click me</c-button></div></template>`,
         },
       ],
+      output: `<template><div><a-button @click='fn'>click me</a-button><c-button @onClick='fn'>click me</c-button></div></template>`,
       options: [{ elementNameIncludes: ["/a-/i"] }],
     },
   ],
