@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-xxbvue",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "custom eslint rules for vue project ",
   "keywords": [
     "eslint",
@@ -13,6 +13,7 @@
     "test": "mocha tests --recursive"
   },
   "peerDependencies": {
+    "eslint": "^6.0.0",
     "vue-eslint-parser": "^7.0.0"
   },
   "dependencies": {
