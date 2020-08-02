@@ -16,7 +16,7 @@
       "request": "launch",
       "name": "测试用spec",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/tests/lib/rules/event-name-without-on-in-template.js"
+      "program": "${workspaceFolder}/tests/lib/rules/no-spui.js"
     }
   ]
 }
