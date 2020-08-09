@@ -8,15 +8,28 @@
       "type": "node",
       "request": "launch",
       "name": "测试用",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${file}"
     },
     {
       "type": "node",
       "request": "launch",
       "name": "测试用spec",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/tests/lib/rules/no-spui.js"
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/tests/lib/rules/init-data-without-props-or-computer.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "测试用spec2",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/tests/lib/rules/event-name-without-on-in-template.js"
     }
   ]
 }
