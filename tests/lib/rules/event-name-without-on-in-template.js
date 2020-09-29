@@ -11,6 +11,7 @@ var ruleTester = new RuleTester({
     ecmaVersion: 7, // 默认支持语法为es5
   },
 });
+const options = [{ elementNameIncludes: ["/a-/i"] }]
 // 运行测试用例
 ruleTester.run("event-name-without-on-in-template", rule, {
   // 正确的测试用例
@@ -29,6 +30,7 @@ ruleTester.run("event-name-without-on-in-template", rule, {
           message: 'Component event name on-click must be not start with "on".', // 与rule抛出的错误保持一致
         },
       ],
+      options,
     },
     {
       code: "<template><a-button @on-click='fn'>click me</a-Button></template>",
@@ -37,16 +39,17 @@ ruleTester.run("event-name-without-on-in-template", rule, {
           message: 'Component event name on-click must be not start with "on".', // 与rule抛出的错误保持一致
         },
       ],
+      options,
     },
     {
-      code: `<template><div><a-button @onClick='fn'>click me</a-button><c-button @onClick='fn'>click me</c-button></div></template>`,
+      code: "<template><div><a-button @onClick='fn'>click me</a-button><c-button @onClick='fn'>click me</c-button></div></template>",
       errors: [
         {
           message: 'Component event name onClick must be not start with "on".', // 与rule抛出的错误保持一致
         },
       ],
       output: `<template><div><a-button @click='fn'>click me</a-button><c-button @onClick='fn'>click me</c-button></div></template>`,
-      options: [{ elementNameIncludes: ["/a-/i"] }],
+      options,
     },
   ],
 });
