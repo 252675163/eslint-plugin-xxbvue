@@ -16,11 +16,10 @@ const options = [{checks:[{elementReg:'/van-/',attribute:'size'}],viewportWidth:
 ruleTester.run("width-unit-transform", rule, {
   // 正确的测试用例
   valid: [
-    //  {
-    //    code: "<template><van-switch size='2vw'>click me</van-switch></template>",
-    //    options,
-    //  },
-     
+    {
+      code: "<template><van-switch size='2vw'>click me</van-switch></template>",
+      options,
+    },
   ],
   // 错误的测试用例
   invalid: [
@@ -35,14 +34,14 @@ ruleTester.run("width-unit-transform", rule, {
       options,
     },
     {
-        code:
-          "<template><van-switch :size='2' >click me</van-switch></template>",
-        errors: [
-          {
-            message: 'size属性需要添加vw单位', // 与rule抛出的错误保持一致
-          },
-        ],
-        options,
-      },
+      code:
+        "<template><van-switch :size='2' >click me</van-switch></template>",
+      errors: [
+        {
+          message: 'size属性需要添加vw单位', // 与rule抛出的错误保持一致
+        },
+      ],
+      options,
+    },
   ],
 });

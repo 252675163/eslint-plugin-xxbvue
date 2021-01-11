@@ -20,23 +20,23 @@ ruleTester.run("init-data-without-props-or-computer", rule, {
   ],
   // 错误的测试用例
   invalid: [
-    {
-      filename: "a.vue",
-      code: `
-      <script lang="ts">
-      export default class InfoDataComponent extends Vue{
-        @Prop({ default: 0 })
-        pageType!: number
-        initdata = this.pageType+1
-      }
-      </script>
-      `,
-      errors: [
-        {
-          message:
-            'Do not init data key named "initdata" with props or computer'
-        },
-      ],
-    },
+    // {
+    //   filename: "a.vue",
+    //   code: `
+    //   <script lang="ts">
+    //   export default class InfoDataComponent extends Vue{
+    //     @Prop({ default: 0 })
+    //     pageType!: number
+    //     initdata = this.pageType+1
+    //   }
+    //   </script>
+    //   `,
+    //   errors: [
+    //     {
+    //       message:
+    //         'Do not init data key named "initdata" with props or computer'
+    //     },
+    //   ],
+    // },
   ],
 });
