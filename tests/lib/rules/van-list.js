@@ -16,10 +16,10 @@ const options = [{checks:[{elementReg:'/van-/',attribute:'size'}],viewportWidth:
 ruleTester.run("van-list", rule, {
   // 正确的测试用例
   valid: [
-    //  {
-    //    code: "<template><van-switch size='2vw'>click me</van-switch></template>",
-    //    options,
-    //  },
+    {
+      code: "<template><van-switch size='2vw'>click me</van-switch></template>",
+      options,
+    },
      
   ],
   // 错误的测试用例

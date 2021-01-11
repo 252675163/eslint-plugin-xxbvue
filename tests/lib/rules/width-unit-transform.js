@@ -11,7 +11,7 @@ var ruleTester = new RuleTester({
     ecmaVersion: 7, // 默认支持语法为es5
   },
 });
-const options = [{checks:[{elementReg:'/van-/',attribute:'size'}],viewportWidth:375}]
+const options = [{ checks: [{ elementReg: '/van-/', attribute: 'size' }], viewportWidth: 375 }]
 // 运行测试用例
 ruleTester.run("width-unit-transform", rule, {
   // 正确的测试用例
@@ -20,6 +20,19 @@ ruleTester.run("width-unit-transform", rule, {
       code: "<template><van-switch size='2vw'>click me</van-switch></template>",
       options,
     },
+      {code:`<template><van-list
+        v-model:error="error"
+        :loading="loading"
+        class="list-content"
+        :finished="finished"
+        offset="100"
+        finished-text="没有更多了"
+        @load="load"
+      >
+        <div a v-show="loading && needLoadMore"></div>
+      </van-list></template>`,
+      options,
+    }
   ],
   // 错误的测试用例
   invalid: [
