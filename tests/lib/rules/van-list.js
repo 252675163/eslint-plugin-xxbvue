@@ -11,14 +11,12 @@ var ruleTester = new RuleTester({
     ecmaVersion: 7, // 默认支持语法为es5
   },
 });
-const options = [{checks:[{elementReg:'/van-/',attribute:'size'}],viewportWidth:375}]
 // 运行测试用例
 ruleTester.run("van-list", rule, {
   // 正确的测试用例
   valid: [
     {
       code: "<template><van-switch size='2vw'>click me</van-switch></template>",
-      options,
     },
      
   ],
