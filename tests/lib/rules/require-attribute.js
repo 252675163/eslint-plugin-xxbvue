@@ -79,21 +79,32 @@ ruleTester.run("require-attribute", rule, {
             @load="onLoad"
             >
           </van-list>
-        </template>`,
+         </template>`,
             errors: [
                 {
                     message: '记得添加属性loading', // 与rule抛出的错误保持一致
                 },
             ],
+            output: `<template>
+          <van-list
+          test="1"
+            v-model:error="error"
+            :finished="finished"
+            error-text="请求失败，点击重新加载"
+            @load="onLoad"
+            >
+          </van-list>
+         </template>`,
             options
-        }, {
+        },
+        {
             code:
                 `<template>
           <van-list></van-list>
         </template>`,
             errors: [
                 {
-                    message: '记得添加属性loading', 
+                    message: '记得添加属性loading',
                 },
                 {
                     message: '记得添加属性:finished="finished"',
@@ -107,7 +118,25 @@ ruleTester.run("require-attribute", rule, {
             ],
             options
         },
-
-        
+        {
+            code:
+                `<template><van-list></van-list></template>`,
+            errors: [
+                {
+                    message: '记得添加属性loading',
+                },
+                {
+                    message: '记得添加属性:finished="finished"',
+                },
+                {
+                    message: '记得添加属性error-text="请求失败，点击重新加载"',
+                },
+                {
+                    message: '记得添加属性v-model:error="error"',
+                },
+            ],
+            output: `<template><van-list :finished="finished" error-text="请求失败，点击重新加载" v-model:error="error"></van-list></template>`,
+            options
+        },
     ],
 });
