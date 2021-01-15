@@ -56,5 +56,17 @@ ruleTester.run("width-unit-transform", rule, {
       ],
       options,
     },
+    {
+      code:
+        '<template><van-icon size="30"  /></template>',
+      errors: [
+        {
+          message: 'size属性需要添加vw单位', // 与rule抛出的错误保持一致
+        },
+      ],
+      output:'<template><van-icon size=8.00vw  /></template>',
+      options,
+    },
+    
   ],
 });
